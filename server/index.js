@@ -5,9 +5,16 @@ const port = 9000;
 
 app.use('/hostels/:Id', express.static('public'));
 
-app.get('/api/hostels/:id', (req, res) => {
+app.get('/api/hostels/:id/photos', (req, res) => {
   const Id = req.params.id;
-  axios.get(`http://localhost:3001/api/hostels/${Id}`)
+  axios.get(`http://localhost:3001/api/hostels/${Id}/photos`)
+    .then(response => (res.status(200).send(response.data)))
+    .catch(err => console.log(err))
+})
+
+app.get('/api/hostels/:id/calendar', (req, res) => {
+  const Id = req.params.id;
+  axios.get(`http://localhost:3002/api/hostels/${Id}/calendar`)
     .then(response => (res.status(200).send(response.data)))
     .catch(err => console.log(err))
 })
