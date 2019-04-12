@@ -19,9 +19,9 @@ app.get('/api/hostels/:id/calendar', (req, res) => {
     .catch(err => console.log(err))
 })
 
-app.get('/api/reviews/:id/reviews', (req, res) => {
+app.get('/api/hostels/:id/reviews', (req, res) => {
   const Id = req.params.id;
-  axios.get(`http://localhost:3003/api/reviews/${Id}/reviews`)
+  axios.get(`http://localhost:3003/api/hostels/${Id}/reviews`)
     .then(response => (res.status(200).send(response.data)))
     .catch(err => console.log(err))
 })
