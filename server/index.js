@@ -7,14 +7,14 @@ app.use('/hostels/:Id', express.static('public'));
 
 app.get('/api/hostels/:id/photos', (req, res) => {
   const Id = req.params.id;
-  axios.get(`http://localhost:3001/api/hostels/${Id}/photos`)
+  axios.get(`http://34.205.69.191/api/hostels/${Id}/photos`)
     .then(response => (res.status(200).send(response.data)))
     .catch(err => console.log(err))
 })
 
 app.get('/api/hostels/:id/calendar', (req, res) => {
   const Id = req.params.id;
-  axios.get(`http://localhost:3002/api/hostels/${Id}/calendar`)
+  axios.get(`http://18.217.39.2/api/hostels/${Id}/calendar`)
     .then(response => (res.status(200).send(response.data)))
     .catch(err => console.log(err))
 })
