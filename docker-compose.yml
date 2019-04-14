@@ -4,4 +4,4 @@ services:
   proxy:
     build: ./
     ports:
-      - '3000:9000'
+      - '4000:9000'
